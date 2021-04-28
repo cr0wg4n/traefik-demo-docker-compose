@@ -3,24 +3,24 @@ debug = false
 
 [entryPoints]
   [entryPoints.http]
-    address = ":80"
+  address = ":80"
     [entryPoints.http.redirect]
-      entryPoint = "https"
+    entryPoint = "https"
   [entryPoints.https]
-    address = ":443"
-    [entryPoints.https.tls]
+  address = ":443"
+  [entryPoints.https.tls]
  
 [acme]
-  email="mmatias@ehcgroup.io"
-  storage="/etc/traefik/acme/acme.json"
-  entryPoint="https"
-  onDemand = true
-  onHostRule = true
-  [acme.httpChallenge]
-    entryPoint = "http"
+email="mmatias@ehcgroup.io"
+storage="/etc/traefik/acme/acme.json"
+entryPoint="https"
+onDemand = true
+onHostRule = true
+[acme.httpChallenge]
+  entryPoint = "http"
 
 [docker]
-  endpoint = "unix:///var/run/docker.sock"
-  domain = "ehcgroup.io"
-  network = "traefik_network"
-  watch = true
+endpoint = "unix:///var/run/docker.sock"
+domain = "ehcgroup.io"
+network = "traefik_network"
+watch = true
