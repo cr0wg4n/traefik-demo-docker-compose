@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx:latest
+    containter_name: nginx_demo
+    labels:
+      - traefik.enable=true
+      - traefik.backend=nginx
+      - traefik.frontend.rule=Host:${CONTAINER_DOMAIN}
+      - traefik.docker.network=traefik_network
+      - traefik.port=${CONTAINER_PORT}
+    networks:
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true
