@@ -9,18 +9,18 @@ debug = false
   [entryPoints.https]
   address = ":443"
   [entryPoints.https.tls]
- 
+
 [acme]
-email="mmatias@ehcgroup.io"
+email="your_email@your_domain.com"
 storage="/etc/traefik/acme/acme.json"
 entryPoint="https"
 onDemand = true
 onHostRule = true
-[acme.httpChallenge]
+  [acme.httpChallenge]
   entryPoint = "http"
 
 [docker]
 endpoint = "unix:///var/run/docker.sock"
-domain = "ehcgroup.io"
+domain = "your_domain.com"
 network = "traefik_network"
 watch = true
