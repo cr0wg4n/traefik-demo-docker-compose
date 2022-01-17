@@ -5,12 +5,11 @@ Traefik es un proxy inverso HTTP moderno y un equilibrador de carga (load balanc
 Características (usadas en este demo):
 
 *  Renovación automática de certificados SSL junto a [Let's Script](https://letsencrypt.org/).
-*  Proxy reverso entre contenedores, maneja multiples contenedores y se las arregla para manejar subdominios bajo un mismo dominio.
-
+*  Proxy reverso entre contenedores, maneja multiples contenedores y sus correspondientes subdominios bajo un mismo dominio.
 
 Pasos para correr este docker-compose:
 
-1. Antes de cualquier cosa corre el script `run_create_traefik_network.sh` para crear una red de docker, toto ello para que traefik pueda comunicarse con tus contenedores, la red creada tiene el nombre de `traefik_network` y es el nombre que debes usar como red externa en tus contenedores.
+1. Antes de cualquier cosa, corre el script `run_create_traefik_network.sh` para crear una red de docker, todo ello para que traefik pueda comunicarse con los contenedores que pertenezcan a ese misma red, la red creada tiene el nombre de `traefik_network` y es el nombre que debes usar como red externa en tus contenedores.
 
 2. Modifica los siguientes datos en el archivo `traefik.toml`:
    * `email="your_email@your_domain.com"`, agrega tu email.
